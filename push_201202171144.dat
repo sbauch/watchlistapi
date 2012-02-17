@@ -1,0 +1,1 @@
+{"klass":"Taps::Push","database_url":"sqlite://watchlist.db","remote_url":"http://heroku:osui59a24am79x@taps19.heroku.com","session_uri":"/sessions/4037824850","stream_state":{},"completed_tables":[],"table_filter":null,"local_tables_info":{"buildings":287}}
