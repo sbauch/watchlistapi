@@ -34,5 +34,5 @@ Building.select do |p|
   end
 end
 content_type :json
-  return {:response => [@buildings.inspect]}.to_json
+  return {:response => [@buildings[0].inspect]}.to_json
 end
