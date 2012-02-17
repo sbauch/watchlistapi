@@ -4,7 +4,7 @@ require 'dm-migrations'
 require 'json'
 require 'geocoder'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/recall.db" || 'postgres://localhost/mydb')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
 class Building
   include DataMapper::Resource
@@ -29,10 +29,10 @@ origin = [lat, lon]
 @buildings = Array.new
 Building.select do |p|
   dest = [p.latitude, p.longitude]
-  if Geocoder::Calculations.distance_between(origin, dest) < 2
+  if Geocoder::Calculations.distance_between(origin, dest) < 5
     @buildings.push p 
   end
 end
 content_type :json
-  return {:response => [@buildings[0..2].inspect]}.to_json
+  return {:response => [@buildings.inspect]}.to_json
 end
