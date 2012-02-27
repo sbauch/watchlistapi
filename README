@@ -1,1 +1,7 @@
-This is the readme
+Sinatra based API for NYC Public Advocate's Landlord Watchlist API
+
+Currently available at watchlistapi.herokuapp.com
+
+Only one endpoint that returns buildings within .5 miles of provided lat/lon coordinates:
+
+http://watchlistapi.herokuapp.com/geocoded/lat=40.714269&lon=-74.005972
