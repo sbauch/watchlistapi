@@ -29,10 +29,10 @@ origin = [lat, lon]
 @buildings = Array.new
 Building.select do |p|
   dest = [p.latitude, p.longitude]
-  if Geocoder::Calculations.distance_between(origin, dest) < 2
+  if Geocoder::Calculations.distance_between(origin, dest) < 0.5
     @buildings.push p 
   end
 end
 content_type :json
-  return {:response => [@buildings[0].inspect]}.to_json
+  return {:response => [@buildings.inspect]}.to_json
 end
